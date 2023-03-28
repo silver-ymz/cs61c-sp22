@@ -1,0 +1,14 @@
+OSTYPE='darwin21'
+SH_VERSION='GNU bash, version 3.2.57(1)-release (arm64-apple-darwin21)
+Copyright (C) 2007 Free Software Foundation, Inc.'
+GIT_VERSION='git version 2.37.1 (Apple Git-137.1)'
+PYTHON3_VERSION='Python 3.9.15'
+PYTHON_VERSION='Python 3.9.15'
+PY_VERSION='Python 3.11.2'
+GCC_VERSION='Apple clang version 14.0.0 (clang-1400.0.29.202)
+Target: arm64-apple-darwin21.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin'
+JAVA_VERSION='openjdk version "17.0.3" 2022-04-19 LTS
+OpenJDK Runtime Environment Zulu17.34+19-CA (build 17.0.3+7-LTS)
+OpenJDK 64-Bit Server VM Zulu17.34+19-CA (build 17.0.3+7-LTS, mixed mode, sharing)'

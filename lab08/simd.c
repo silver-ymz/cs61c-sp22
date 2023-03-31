@@ -56,7 +56,7 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
         __m128i sum_vec = _mm_setzero_si128();
         unsigned int i = 0;
         for(i = 0; i < NUM_ELEMS / 4 * 4; i += 4) {
-            __m128i tmp = _mm_loadu_si128((__128i *)(vals + i));
+            __m128i tmp = _mm_loadu_si128((__m128i *) (vals + i));
             _mm_add_epi32(sum_vec, _mm_and_si128(_mm_cmpgt_epi32(tmp, _127), tmp));
         }
         int tmp_arr[4];

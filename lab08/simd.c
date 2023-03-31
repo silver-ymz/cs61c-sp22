@@ -53,7 +53,20 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
 
     for(unsigned int w = 0; w < OUTER_ITERATIONS; w++) {
         /* YOUR CODE GOES HERE */
-
+        __m128i sum_vec = _mm_setzero_si128();
+        unsigned int i = 0;
+        for(i = 0; i < NUM_ELEMS / 4 * 4; i += 4) {
+            __m128i tmp = _mm_loadu_si128((__128i *)(vals + i));
+            _mm_add_epi32(sum_vec, _mm_and_si128(_mm_cmpgt_epi32(tmp, _127), tmp));
+        }
+        int tmp_arr[4];
+        _mm_storeu_si128((__m128i *)tmp_arr, sum_vec);
+        int sum = tmp_arr[0] + tmp_arr[1] + tmp_arr[2] + tmp_arr[3];
+        while (i != NUM_ELEMS) {
+            sum += vals[i];
+            i++;
+        }
+        result += sum;
         /* Hint: you'll need a tail case. */
     }
 

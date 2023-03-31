@@ -60,13 +60,15 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
         }
         int tmp_arr[4];
         _mm_storeu_si128((__m128i *)tmp_arr, sum_vec);
-        long long int sum = tmp_arr[0] + tmp_arr[1] + tmp_arr[2] + tmp_arr[3];
+        result += tmp_arr[0];
+        result += tmp_arr[1];
+        result += tmp_arr[2];
+        result += tmp_arr[3];
         for(unsigned int i = NUM_ELEMS / 4 * 4; i < NUM_ELEMS; i++) {
             if (vals[i] >= 128) {
-                sum += vals[i];
+                result += vals[i];
             }
         }
-        result += sum;
         /* Hint: you'll need a tail case. */
     }
 
